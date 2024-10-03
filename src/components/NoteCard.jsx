@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { deleteNote, clear } from "../slice/noteSlice";
 import { CardFooter } from "@/components/ui/card";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const NoteCard = () => {
   const [search, setSearch] = useState("");
@@ -55,9 +56,10 @@ const NoteCard = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      onClick={() =>
-                        navigator.clipboard.writeText(note?.description || "")
-                      }
+                      onClick={() => (
+                        navigator.clipboard.writeText(note?.description || ""),
+                        toast.success("Copied to clipboard!")
+                      )}
                     >
                       <CopyIcon className="size-4" />
                     </Button>
@@ -66,9 +68,7 @@ const NoteCard = () => {
                         <EditIcon className="size-4" />
                       </Button>
                     </Link>
-                    <Button variant="outline" size="icon">
-                      <DownloadIcon className="size-4" />
-                    </Button>
+
                     <Link to={`/notes/${note?.id}`}>
                       <Button variant="outline" size="icon">
                         <Eye className="size-4" />
