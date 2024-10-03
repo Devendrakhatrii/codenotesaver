@@ -10,6 +10,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import toast from "react-hot-toast";
 
 const NoteDetail = () => {
   const { id } = useParams();
@@ -35,8 +36,9 @@ const NoteDetail = () => {
                   <h1 className="text-2xl font-bold">{note?.title}</h1>
                   <Button
                     variant="outline"
-                    onClick={() =>
-                      navigator.clipboard.writeText(note?.description)
+                    onClick={
+                      (() => navigator.clipboard.writeText(note?.description),
+                      toast.success("Copied to clipboard!"))
                     }
                     size="icon"
                   >
