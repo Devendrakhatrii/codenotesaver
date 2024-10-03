@@ -30,7 +30,7 @@ const CreateNote = () => {
     updatedAt: new Date().toLocaleDateString(),
   });
   return (
-    <div className="w-screen  m-10 mx-auto max-w-3xl">
+    <div className="w-screen p-10 md:m-10 md:mx-auto max-w-3xl">
       <Button variant="outline" onClick={() => navigate("/")}>
         <ArrowLeftIcon className="mr-2" />
         Back

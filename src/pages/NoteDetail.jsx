@@ -22,7 +22,7 @@ const NoteDetail = () => {
   return (
     <>
       {" "}
-      <div className="w-screen  m-10 mx-auto max-w-3xl">
+      <div className="w-screen  md:m-10 p-10 md:mx-auto max-w-3xl">
         <Button variant="outline" onClick={() => navigate("/")}>
           <ArrowLeftIcon className="mr-2" />
           Back

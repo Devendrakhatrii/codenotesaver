@@ -49,7 +49,7 @@ const NoteCard = () => {
           <Card key={index}>
             <CardHeader>
               <CardTitle>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row gap-2">
                   <h1 className="text-2xl font-bold">{note?.title}</h1>
                   <div className="flex gap-2">
                     <Button
@@ -92,11 +92,13 @@ const NoteCard = () => {
               </CardDescription>
             </CardHeader>
             <CardFooter>
-              <div className="flex justify-between w-full p-2 ">
-                <p>
+              <div className="flex justify-between w-full p-2 gap-1 items-center flex-col md:flex-row">
+                <p className="flex items-center gap-1">
+                  Created
                   <Calendar className="size-4" /> {note?.createdAt}
                 </p>
-                <p>
+                <p className="flex items-center gap-1">
+                  Updated
                   <Calendar className="size-4" /> {note?.updatedAt}
                 </p>
               </div>
